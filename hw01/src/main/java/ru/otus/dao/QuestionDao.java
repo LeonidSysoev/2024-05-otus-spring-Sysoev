@@ -2,7 +2,6 @@ package ru.otus.dao;
 
 import ru.otus.domain.Question;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public interface QuestionDao {

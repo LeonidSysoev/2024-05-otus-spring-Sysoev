@@ -12,10 +12,10 @@
         </constructor-arg>
     </bean>
     <bean id="csvQuestionDao" class="ru.otus.dao.CsvQuestionDao">
-        <constructor-arg index="0" ref="appProperties"/>
+        <constructor-arg index="0" ref="testFileNameProvider"/>
     </bean>
-    <bean id="appProperties" class="ru.otus.config.AppProperties">
-        <constructor-arg value="./questions.csv"/>
+    <bean id="testFileNameProvider" class="ru.otus.config.AppProperties">
+        <constructor-arg name="testFileName" value="/questions.csv"/>
     </bean>
     <bean id="questionDto" class="ru.otus.dao.dto.QuestionDto"/>
 
