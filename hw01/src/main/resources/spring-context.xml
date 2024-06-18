@@ -15,11 +15,17 @@
         <constructor-arg index="0" ref="appProperties"/>
     </bean>
     <bean id="appProperties" class="ru.otus.config.AppProperties">
-        <constructor-arg value="./question.csv">
-        </constructor-arg>
+        <constructor-arg value="./questions.csv"/>
     </bean>
     <bean id="questionDto" class="ru.otus.dao.dto.QuestionDto"/>
 
+    <bean id="testService" class="ru.otus.service.TestServiceImpl">
+        <constructor-arg name="ioService" ref="ioService"/>
+        <constructor-arg name="csvQuestionDao" ref="csvQuestionDao"/>
+    </bean>
+    <bean id="testRunnerService" class="ru.otus.service.TestRunnerServiceImpl">
+        <constructor-arg name="testService" ref="testService"/>
+    </bean>
 
 
 

@@ -4,6 +4,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.RequiredArgsConstructor;
+import ru.otus.config.AppProperties;
 import ru.otus.config.TestFileNameProvider;
 import ru.otus.dao.dto.QuestionDto;
 import ru.otus.domain.Question;
@@ -25,7 +26,7 @@ public class CsvQuestionDao implements QuestionDao {
         List<Question> questions = null;
         CSVReader reader = null;
         try {
-            reader = new CSVReader(new FileReader(fileNameProvider.getTestFileName()));
+            reader = new CSVReader(new FileReader("./questions.csv"));
         } catch (QuestionReadException | FileNotFoundException e) {
             e.printStackTrace();
         }
